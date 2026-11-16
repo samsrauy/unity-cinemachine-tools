@@ -6,6 +6,7 @@ public class CameraSwitcher : MonoBehaviour
     [Header("Cameras")]
     // This is the section where you set up the Cinemachine Cameras. Follow the examples for
     // more cameras. But you must name them exactly like the variables below.
+	// Add the script to the MainCamera and make sure you are using the OLD input method or BOTH input methods.
     public CinemachineCamera cameraOne; // Your main gameplay camera
     public CinemachineCamera cameraTwo; // Your secondary/cutscene camera
     public CinemachineCamera cameraThree; // Your tertiary/cutscene camera
@@ -17,7 +18,7 @@ public class CameraSwitcher : MonoBehaviour
     private void Start()
     {
         // Ensure Camera One starts as the active camera. Ignore this for now. I'm still
-	// thinking through how to do this.
+		// thinking through how to do this.
         ActivateCameraOne();
 
         // If using a timer, trigger the switch after the specified seconds
@@ -38,29 +39,29 @@ public class CameraSwitcher : MonoBehaviour
         {
             ActivateCameraTwo();
         }
-	else if (Input.GetKeyDown(KeyCode.Alpha3))
-	{
-	    ActivateCameraThree();
-	}
+		else if (Input.GetKeyDown(KeyCode.Alpha3))
+		{
+	    	ActivateCameraThree();
+		}
     }
 
     public void ActivateCameraOne()
     {
-        cameraOne.Priority = 10;
+        cameraOne.Priority = 15;
         cameraTwo.Priority = 5;
-	cameraThree.Priority = 15;
+		cameraThree.Priority = 10;
     }
 
     public void ActivateCameraTwo()
     {
         cameraOne.Priority = 5;
         cameraTwo.Priority = 15;
-	cameraThree.Priority =10;
+		cameraThree.Priority =10;
     }
     public void ActivateCameraThree()
     {
         cameraOne.Priority = 5;
         cameraThree.Priority = 15;
-	cameraTwo.Priority = 10;
+		cameraTwo.Priority = 10;
     }
 }
