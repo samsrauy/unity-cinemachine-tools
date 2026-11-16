@@ -1,6 +1,9 @@
 using UnityEngine;
-using UnityEngine.InputSystem; // This uses Unity's new Input Settings asset. Add this to the Cinemachine Brain (often your MainCamera).
+using UnityEngine.InputSystem; // This uses Unity's new Input Settings asset. Add this script to the an empty GameObject, tag the GameObject "Player"
 using Unity.Cinemachine; // Use using Cinemachine; if you are on older Unity versions
+// For the new Input Settings system, you'll need to make sure you're using it under project settings. Then you'll add custom inputs to the universal input settings. Call them whatever you like
+// and map the correct button presses. Because the new input system reads from the Player tag, that object has to have the inputs mapped to the inputsettings (.inputsettings file). Because you're adding
+// this NewCameraSwitcher.cs file to the "Player" and not anything else, it will read correctly. In the inspector, add the cameras and specify what button does what.
 
 public class CameraSwitcher : MonoBehaviour
 {
